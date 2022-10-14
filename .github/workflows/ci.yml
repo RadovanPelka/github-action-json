@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: yarn install
+      - run: yarn build
+      - run: mkdir -p build
+
+      - name: Get package.json info
+        id: packageJson
+        uses: ./
+
+      - run: echo "name - ${{ steps.packageJson.outputs.name }}"
+      - run: echo "version - ${{ steps.packageJson.outputs.version }}"
+      - run: echo "description - ${{ steps.packageJson.outputs.description }}"
+      - run: echo "author - ${{ steps.packageJson.outputs.author }}"
+      - run: echo "homepage - ${{ steps.packageJson.outputs.homepage }}"
+      - run: echo "license - ${{ steps.packageJson.outputs.license }}"

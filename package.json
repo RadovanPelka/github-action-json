@@ -1,0 +1,41 @@
+{
+  "name": "github-action-json",
+  "version": "1.0.0",
+  "description": "Edit or Read the content of any json file or the package.json that you want.",
+  "scripts": {
+    "prepare": "husky install && npm run build",
+    "build": "ncc build src/index.ts -o lib",
+    "watch": "ncc watch src/index.ts -o lib"
+  },
+  "author": "RadovanPelka",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RadovanPelka/github-action-json"
+  },
+  "lint-staged": {
+    "*.ts?(x)": [
+      "npm run build"
+    ]
+  },
+  "keywords": [
+    "actions",
+    "package",
+    "package.json",
+    "json",
+    "node",
+    "setup",
+    "config",
+    "configs"
+  ],
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "ramda": "^0.28.0"
+  },
+  "devDependencies": {
+    "@kkt/ncc": "~1.0.12",
+    "@types/ramda": "^0.28.15",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
+  }
+}
