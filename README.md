@@ -41,7 +41,7 @@ Edit or Read the content of any json file or the `package.json` that you want.
       }
 
 - run: echo "version - ${{ steps.packageJson.outputs.version }}"
-- run: echo "engines - ${{ steps.packageJson.outputs.engines }}"  }
+- run: echo "engines - ${{ steps.packageJson.outputs.engines }}"
 ```
 
 ### Output Parameters

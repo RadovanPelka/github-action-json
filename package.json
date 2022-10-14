@@ -1,6 +1,6 @@
 {
   "name": "github-action-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Edit or Read the content of any json file or the package.json that you want.",
   "scripts": {
     "prepare": "husky install && npm run build",
